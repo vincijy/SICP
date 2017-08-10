@@ -1,7 +1,7 @@
 
 [MIT Scheme 的基本使用](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
 
-##Emac 基本用法
+## Emac 基本用法
 
 ### 常用快捷键
 
@@ -34,7 +34,8 @@ C-x C-v
 退出快捷键:CTRL+x 然后: CTRL+c
 打开文件: CTRL+x 然后 : CTRL+f
 
-标记的快捷键是ctrl+空格和ctrl+@。前者和中文系统的输入法切换有冲突，后者其实是ctrl+shift+2，极度难按。所以如果经常按请重新设置键位。按完之后就进入了标记状态，然后以任意方式移动光标，标记起始位和光标之间的内容都会被选中，然后根据情况你就能复制或者剪切。如果要多行，那么先ctrl-a到开头，然后ctrl+shift+2标记，ctrl+n移动数行，ctrl+e到行尾。然后该剪切剪切（ctrl+w），该复制复制（alt+w）。
+标记的快捷键是ctrl+空格和ctrl+@。前者和中文系统的输入法切换有冲突，后者其实是ctrl+shift+2，极度难按。所以如果经常按请重新设置键位。按完之后就进入了标记状态，然后以任意方式移动光标，标
+记起始位和光标之间的内容都会被选中，然后根据情况你就能复制或者剪切。如果要多行，那么先ctrl-a到开头，然后ctrl+shift+2标记，ctrl+n移动数行，ctrl+e到行尾。然后该剪切剪切（ctrl+w），该复制复制（alt+w）。
 
 
  
