@@ -1,11 +1,20 @@
 
 ## 环境配置  
 
-MIT Scheme + 编辑器EMACS  
+MIT Scheme
+
+编辑器EMACS（考虑到一堆括号代码格式对齐，还是用emac比较合适）  
 
 [MIT Scheme 的基本使用](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
 
-用编辑器编写函数，在命令行下通过load加载进解释器
+用编辑器编写函数，然后在在命令行下通过load函数加载进解释器。
+
+你可以通过编辑配置文件scheme.ini来自定义MIT-Scheme。     scheme.ini文件的创建路径是由环境变量HOMEPATH决定的。你可以通过在命令提示符（DOS Windows）中输入>set HOMEPATH来取得HOMEPATH的值。在WinXP中，HOMEPATH被预定义为：\Document and Setting\username    
+下面的代码给出了一个scheme.ini文件的例子：    
+
+    (cd "C:\\doc\\scheme")
+    (define call/cc call-with-current-continuation)
+第一行代码代表将工作目录切换到C:\doc\scheme。通过这条代码，MIT-Scheme移动工作路径切换到这个路径，你不需要再敲击程序的绝对路径来载入Scheme程序。第二行是定义call-with-current-continuation的缩略词
 
 
 
