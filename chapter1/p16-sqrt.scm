@@ -1,5 +1,5 @@
-(load "p16-sqrt-iter.scm")
 
 
+(load "p15-sqrt-iter.scm")
 (define (sqrt x)
-  (new-sqrt-iter 1 x))
+  (sqrt-iter 1 x))
