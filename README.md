@@ -3,7 +3,8 @@
 
 MIT Scheme
 
-编辑器EMACS（考虑到一堆括号代码格式对齐，还是用emac比较合适）  
+编辑器EMACS（考虑到一堆括号代码格式对齐，还是用emac比较合适）
+[Emacs on window 初步实践](https://www.codelast.com/%E5%8E%9F%E5%88%9B-emacs-on-windows%E5%88%9D%E6%AD%A5%E5%AE%9E%E8%B7%B5/)
 
 [MIT Scheme 的基本使用](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
 
