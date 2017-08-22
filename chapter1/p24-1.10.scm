@@ -15,4 +15,5 @@
 
 (define (2^^n  n) (A 2 n))
 
-;if n=4 ,then A 1 A 1 A 1 A 2 (4-3) => A 1 A 1 A 1 2 ,and we know previously A 1 n descripts ;2^n, so A 2 4 equals to 2^2^2^2
+;;;if n=4 ,then A 1 A 1 A 1 A 2 (4-3) => A 1 A 1 A 1 2 ,and we know previously A 1 n   
+;;;describes 2^n, so A 2 4 equals to 2^2^2^2
