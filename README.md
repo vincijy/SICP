@@ -50,9 +50,7 @@ C-x C-c  关闭emacs
 
 选中某一块区域：CTRL+@（CTRL+SHIFT+2）或者CTRL+SPACE    
 
-移动光标到合适的位置（CTRL+p、CTRL+n、CTRL+f、CTRL+b分别是向上、下、前、后 来移动光标）。  
-
-剪切快捷键：CTRL+k 删除当前位置到行末，CTRL+d相当于键盘上的DELETE键，  
+删除快捷键： CTRL+d相当于键盘上的DELETE键 
 
 删除前面的字符：BACKSPACE  
 
@@ -64,9 +62,12 @@ C-x C-c  关闭emacs
 
 标记的快捷键：ctrl+空格和ctrl+@。按完之后就进入了标记状态，然后以任意方式移动光标，标记起始位和光标之间的内容都会被选中，然后根据情况你就能复制或者剪切。如果要多行，那么先ctrl-a到开头，然后ctrl+shift+2标记，ctrl+n移动数行，ctrl+e到行尾。然后该剪切剪切（ctrl+w），该复制复制（alt+w）。  
 
+##### 撤销操作      
+
+撤销操作 : CTRL + /  
 
 
-##### 注释  
+##### 注释    
 
 ###### 多行注释：  
 
