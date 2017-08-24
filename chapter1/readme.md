@@ -27,6 +27,7 @@ eg:
 
 #### tree recurse
 
+```
 transfomation:
                                        2
                 |                      |
@@ -38,3 +39,4 @@ transfomation:
 
 left + right -> left
 left         -> right
+```
