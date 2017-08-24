@@ -20,7 +20,7 @@ eg:
 
 #### orders of growth  
 
- we say that R(n) has orders of growth ¦È(f(n)) ,written as R(n) =  ¦È(f(n)),if
+ we say that R(n) has orders of growth``` ¦È(f(n))``` ,written as R(n) = ``` ¦È(f(n))```,if
 
  there are positive constants k1 and k2 independent of n such that R(n) is sandwiched 
  between k1*f(n) and k2*f(n)
