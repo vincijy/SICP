@@ -26,9 +26,36 @@ MIT Scheme
 
 #### 常用快捷键
 
+
+##### 窗口管理
+
+C＋x＋1 只显示一个窗口    
+
+C＋x＋2 上下分屏   
+
+C＋x＋3 左右分屏（经测试得到的结果）    
+
+C＋x＋o 切换到另一个窗口   
+
+C＋M＋v 在不切换到另一个窗口的情况下，向下移动其光标 （快捷方法）    
+
+C＋x＋4＋C＋f 在新窗口打开文件（快捷方法）    
+
+M-x make-frame 打开完整的新窗口，带工具栏的。    
+
+M-x delete-frame 关闭    
+
+
+M+X + long_command 如 M+x+text-mode 切换编辑模式。其它命令以后用到再学。    
+
+M+x + slime 进入slime模式    
+
+
 ##### 文件操作  
 
-C-x C-f    按提示输入文件名，如果文件不存在则新建文件，如果文件存在则打开文件
+C-x d 列出当前文件夹下的文件，可通过移动光标到需要打开的文件，然后按enter打开
+
+C-x C-f    按提示输入文件名，如果文件不存在则新建文件，如果文件存在则打开文件（tab键可以自动补全）
 
 C-x C-s    保存  
 
@@ -85,5 +112,15 @@ C-x C-c  关闭emacs
 
 好在有一个 Alt-; 的快捷键，默认绑定了 comment-dwim，能注释/反注释当前激活的区域。如果没有激活区域，就在当前行末加注释  
 
- 
+###### git
 
+在.emacs中添加Gitbash的路径
+
+```
+(setq explicit-shell-file-name
+      "C:/Program Files (x86)/Git/bin/bash.exe")
+(setq shell-file-name explicit-shell-file-name)
+(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin")
+```
+
+然后按M-x shell
