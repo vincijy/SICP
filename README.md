@@ -22,6 +22,19 @@ MIT Scheme
 
 ## 记录点Emac 基本用法
 
+#### 使用git
+
+在.emacs中添加Gitbash的路径
+
+```
+(setq explicit-shell-file-name
+      "C:/Program Files (x86)/Git/bin/bash.exe")
+(setq shell-file-name explicit-shell-file-name)
+(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin")
+```
+
+然后按M-x shell
+
 
 
 #### 常用快捷键
@@ -112,15 +125,3 @@ C-x C-c  关闭emacs
 
 好在有一个 Alt-; 的快捷键，默认绑定了 comment-dwim，能注释/反注释当前激活的区域。如果没有激活区域，就在当前行末加注释  
 
-###### git
-
-在.emacs中添加Gitbash的路径
-
-```
-(setq explicit-shell-file-name
-      "C:/Program Files (x86)/Git/bin/bash.exe")
-(setq shell-file-name explicit-shell-file-name)
-(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin")
-```
-
-然后按M-x shell
