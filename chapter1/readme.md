@@ -42,7 +42,7 @@ left + right -> left
 left         -> right
 
 ```
-Observe that applying this transfomation over and over again n times ,starting with 1 and 0 ,produced by the pair Fib(n) Fib(n)
+Observe that applying this transfomation over and over again n times ,starting with 1 and 0 ,produced  the pair Fib(n) Fib(n)
 
 The fibonacci numbers are produced by applying T n times.
 
@@ -57,7 +57,7 @@ The fibonacci numbers are produced by applying T n times.
 
 accelerate the transfomation
 
-consider T to be the special case of p=0 and q=0 in a family of transfomations T(p,q)
+consider T to be the special case of p=0 and q=1 in a family of transfomations T(p,q)
 
 ,where T(p,q) transfors the (left, right) according to
 ```
@@ -73,6 +73,8 @@ then for T^2 we have transfomation:
 
 (2pq + q^2)*left + (p^2 + q^2)*right -> right
 ```
+
+related code using T^2
 ```
 
 (define (fast-fib n )
