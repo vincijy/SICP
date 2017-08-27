@@ -90,3 +90,4 @@ then for T^2 we have transfomation:
 
 
 ```
+gcd
