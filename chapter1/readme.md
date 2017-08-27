@@ -18,9 +18,7 @@ eg:
 
 ### orders of growth  
 
- we say that R(n) has orders of growth```theta(f(n))``` ,written as R(n) = ``` theta(f(n))```,if
- there are positive constants k1 and k2 independent of n such that R(n) is sandwiched 
- between k1*f(n) and k2*f(n)
+ We say that R(n) has orders of growth```theta(f(n))``` ,written as R(n) = ``` theta(f(n))```,if there are positive constants k1 and k2 independent of n such that R(n) is sandwiched  between k1*f(n) and k2*f(n)
 
 ### tree recurse
 
@@ -43,9 +41,9 @@ left + right -> left
 left         -> right
 
 
-observe that applying this transfomation over and over again n times ,starting with 1 and 0 ,produced by the pair Fib(n) Fib(n)
+Observe that applying this transfomation over and over again n times ,starting with 1 and 0 ,produced by the pair Fib(n) Fib(n)
 
-the fibonacci numbers are produced by applying T n times.
+The fibonacci numbers are produced by applying T n times.
 
 ```
 (define (fib n)
@@ -90,6 +88,14 @@ then for T^2 we have transfomation:
 
 
 ```
-gcd
+### great common divisors
 
-test
+Euclid's Algorithms
+```
+(define (gcd dividend divisor)
+	(if (= divisor 0)
+	dividend
+	(gcd divisor (remainder dividend divisor))))
+
+```
+the order of growth is theta(log n) (proved by lame's Themorem)
