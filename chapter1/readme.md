@@ -104,3 +104,29 @@ Euclid's Algorithms
 
 ```
 the order of growth is theta(log n) (proved by lame's Themorem)
+
+### testing for primality
+#### searching for divisor    
+one fact: if n is not prime, it must have a factor(not equal to 1 or itself),which
+is less than or equal to sqrt of n. Based on this fact, the algorithms need only test divisor between 1 and sqrt of n.
+
+```
+
+(define (smallest-divisor n)
+  (find-divisor n 2))
+
+(define (find-divisor n test-divisor)
+  (cond ((> (square test-divisor) n ) n)
+	((divided? n  test-divisor) test-divisor)
+	(else (find-divisor n (+ test-divisor 1)))))
+
+(define (prime? n)
+	(= (smallest-divisor n) n))
+```
+
+#### fermat test
+
+fermat's little theorem:
+	 if n is a prime number, and a is any positive integer less than n,then 
+       ``` (remainder a^n n) = (remainder a n) = a```
+
