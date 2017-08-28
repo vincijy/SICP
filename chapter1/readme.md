@@ -124,9 +124,9 @@ is less than or equal to sqrt of n. Based on this fact, the algorithms need only
 	(= (smallest-divisor n) n))
 ```
 
-#### fermat test
+#### the fermat test
 
 fermat's little theorem:
-	 if n is a prime number, and a is any positive integer less than n,then 
+	 if n is a prime number, and a is any positive integer less than n,then     
        ``` (remainder a^n n) = (remainder a n) = a```
 
