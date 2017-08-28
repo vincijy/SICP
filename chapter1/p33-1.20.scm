@@ -37,7 +37,7 @@ it takes 4 steps only
 in the normal-order evaluation
 
 (gcd 206 40)
-     | divisor = 40 #f
+     | divisor = 40 #f  step = 0
      V
 
 (gcd 40 (remainder 206 40))
@@ -53,14 +53,26 @@ in the normal-order evaluation
      V
 
 (gcd t3 (remiander t2 t3))
-     |  t4 = (remainder t2 t3) if #f step + 7
+     |  t4 = (remainder t2 t3) if? #t step + 7
      V 
-(gcd t4 (remainder t3 t4))
-     |   t5 =(remainder t3 t4) if? #t step +12
+     t3
+     |
      V
-(t4)
+(remainder t1 t2)
+     |
+     V
+(remainder (remainder 206 40) (remainder 40 t1))
+     |
+     V
+(remainder (remainder 206 40) (remaider 40 (remainder 206 40)))
+     |
+     V
+(remainder (remainder 206 40) (remaider 40 6))
+     |
+     V
+(remainder 6 4)
+     |
+     V
+     2 step+4
 
-(remainder
-         (remiander
-                  (remainder......
- 
+it takes 21 steps
