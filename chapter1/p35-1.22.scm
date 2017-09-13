@@ -1,4 +1,10 @@
 
+(define (square x)
+  (* x x))
+
+(define (divide? n d)
+  (= (remainder n d) 0))
+;===============
 
 ; runtime is a primitive in scheme,
 ; return a int specified the amout of time systerm has been running
@@ -8,6 +14,7 @@
   (display n)
   (start-prime-test n (runtime)))
 
+;if n is prime report elapsed-time
 (define (start-prime-test n start-time)
   (if (prime? n)
       (report-prime (- (runtime) start-time))))
@@ -16,6 +23,7 @@
   (display "used time: ")
   (display elapsed-time))
 
+;==============
 (define (prime? x)
   (= (find-smallest-divisor x) x))
 
@@ -28,17 +36,15 @@
 	 ((divide? n sd)  sd)
 	 (else (test-divisor n (+ sd 1)))))
 
-(define (square x)
-  (* x x))
 
-(define (divide? n d)
-  (= (remainder n d) 0))
+;;;====================
+;;;check odd intergrative number in a specific range
+;; find prime smaller than n (privous)
+;;; input should be odd
+(define (search-for-prime n)
+  (if (prime? (- n 2))
+      (- n 2)
+      (search-for-prime (- n 2))))
 
-(define (search-for-prime end)
-  (if (> end 2)
-      ((timed-prime-test end)
-       (search-for-prime (- end 1)))
-      ))
-      
-
-(search-for-prime 100)
+(search-for-prime 101)
+   
