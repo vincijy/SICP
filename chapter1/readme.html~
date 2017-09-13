@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-09-12 周二 20:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../css/simple-frame.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2bd8674">1. chapter-1</a>
+<ul>
+<li><a href="#orga57b390">1.1. recursive process -&gt; iterative process</a></li>
+<li><a href="#org349e032">1.2. orders of growth</a></li>
+<li><a href="#orgfef3849">1.3. tree recurse</a></li>
+<li><a href="#orgc84b94e">1.4. great common divisors</a></li>
+<li><a href="#org4f75615">1.5. testing for primality</a>
+<ul>
+<li><a href="#org8e2b02b">1.5.1. searching for divisor</a></li>
+<li><a href="#org8c34a2b">1.5.2. the fermat test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2bd8674" class="outline-2">
+<h2 id="org2bd8674"><span class="section-number-2">1</span> chapter-1</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orga57b390" class="outline-3">
+<h3 id="orga57b390"><span class="section-number-3">1.1</span> recursive process -&gt; iterative process</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+In general,the technique of defining an ivariant quantity that remains unchanged from state to state is a powerful way to think about design of iterative algorithms.
+</p>
+
+<p>
+`
+</p>
+<pre class="example">
+
+(define (expt b n state-var)
+	(if (= n 0)
+	1
+	(expt b (- n 1) (* b state-var))))
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org349e032" class="outline-3">
+<h3 id="org349e032"><span class="section-number-3">1.2</span> orders of growth</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+We say that R(n) has orders of growth &theta;(f(n)) ,written as R(n) = &theta;(f(n)),
+if there are positive constants k1 and k2 independent of n such that R(n)
+is sandwiched  between k1*f(n) and k2*f(n)
+</p>
+</div>
+</div>
+<div id="outline-container-orgfef3849" class="outline-3">
+<h3 id="orgfef3849"><span class="section-number-3">1.3</span> tree recurse</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+fib series: 0 1 1 2 3 5 8 13&#x2026;
+</p>
+<pre class="example">
+transfomation T:
+                     |
+                  /      \               
+                left   right   
+                |                       
+               /  \                   
+             left right      
+              |                      
+            / \                     
+      left right          
+
+left + right -&gt; left
+left         -&gt; right
+
+</pre>
+
+<p>
+Observe that applying this transfomation over and over again n times ,starting with 1 and 0 ,produced  the pair Fib(n) Fib(n)
+</p>
+
+<p>
+The fibonacci numbers are produced by applying T n times.
+</p>
+
+<pre class="example">
+
+(define (fib n)
+  (define (iter-fib left right n)
+    (cond ((= n 0) right)
+	   (else (iter-fib (+ left right) left (- n 1)))))
+  (iter-fib 1 0 n))
+
+</pre>
+
+<p>
+accelerate the transfomation
+</p>
+
+<p>
+consider T to be the special case of p=0 and q=1 in a family of transfomations T(p,q)
+</p>
+
+<p>
+,where T(p,q) transfors the (left, right) according to
+</p>
+
+
+<pre class="example">
+(p + q)*left + q*right -&gt; left
+
+q*left + p*right -&gt;right
+</pre>
+
+<p>
+then for T<sup>2</sup> we have transfomation:
+</p>
+
+<pre class="example">
+
+
+(p^2 + 2pq +2q^2)*left + (2pq +q^2)*right -&gt; left
+
+(2pq + q^2)*left + (p^2 + q^2)*right -&gt; right
+
+</pre>
+<p>
+related code using T<sup>2</sup>
+</p>
+
+<pre class="example">
+
+
+
+(define (fast-fib n )
+  (define (oven? x) (= (remainder x 2) 0))
+
+  (define (iter-fib left right p q n)
+    (cond ((= n 0) right)
+	  ((oven? n)
+	   (iter-fib (+ (* (+ (* p p) (* 2 p q) (* 2 q q)) left)  (*(+ (* 2 p q) (* q q)) right))
+		     (+ (*(+ (* 2 p q) (* q q)) left) (* (+ (* p p) (* q q)) right))
+		     p
+		     q
+		     (/ n 2)))
+	   (else (iter-fib (+ left right) left p q  (- n 1)))))
+  (iter-fib 1 0 0 1 n))
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc84b94e" class="outline-3">
+<h3 id="orgc84b94e"><span class="section-number-3">1.4</span> great common divisors</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Euclid's Algorithms
+</p>
+
+<pre class="example">
+
+(define (gcd dividend divisor)
+	(if (= divisor 0)
+	dividend
+	(gcd divisor (remainder dividend divisor))))
+
+</pre>
+<p>
+the order of growth is theta(log n) (proved by lame's Themorem)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f75615" class="outline-3">
+<h3 id="org4f75615"><span class="section-number-3">1.5</span> testing for primality</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-org8e2b02b" class="outline-4">
+<h4 id="org8e2b02b"><span class="section-number-4">1.5.1</span> searching for divisor</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+one fact: <b>if n is not prime, it must have a factor(not equal to 1)less than or equal to sqrt of n.</b> 
+Based on this fact, the algorithms need only test divisor between 1 and sqrt of n.
+</p>
+
+<pre class="example">
+
+(define (smallest-divisor n)
+  (find-divisor n 2))
+
+(define (find-divisor n test-divisor)
+  (cond ((&gt; (square test-divisor) n ) n)
+	((divided? n  test-divisor) test-divisor)
+	(else (find-divisor n (+ test-divisor 1)))))
+
+(define (prime? n)
+	(= (smallest-divisor n) n))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8c34a2b" class="outline-4">
+<h4 id="org8c34a2b"><span class="section-number-4">1.5.2</span> the fermat test</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li>fermat's little theorem:
+if n is a prime number, and a is any positive integer less than n,then</li>
+</ul>
+<p>
+<b>(remainder a<sup>n</sup> n) = (remainder a n) = a</b>
+</p>
+
+<ul class="org-ul">
+<li>caculate mod(a<sup>n</sup> , m)</li>
+</ul>
+<pre class="example">
+(define (expmod base expt m)
+  (if (= expt 0)
+      1
+      (remainder (* base (expmod base (- expt 1) m)) m)))
+</pre>
+<ul class="org-ul">
+<li>test</li>
+</ul>
+<pre class="example">
+
+;;; a time of random test
+;;;  random return a integer less that its input.
+;;; Hence ,to  get a number between 1 and (n-1) inclusive,
+;;; we call *random* with an input of (n-1) and add 1 to the result.
+(define (fermat-test n)
+  (define (try-it a)
+    (= (expmod a n n) a))
+  (try-it (+ 1 (random (- n 1)))))
+
+
+
+(define (fast-prime-test num times)
+  (cond ((= times 0) true)
+	((fermat-test num)  (fast-prime-test  num (- times 1))) ;;;if it pass , times of test substact 1
+	(else false)))	
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2017-09-12 周二 20:51</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

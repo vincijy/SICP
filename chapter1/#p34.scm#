@@ -36,7 +36,7 @@
   (try-it (+ 1 (random (- n 1)))))
     
 
-
+ 
 (define (fast-prime-test num times)
   (cond ((= times 0) true)
 	((fermat-test num)  (fast-prime-test  num (- times 1)))

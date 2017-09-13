@@ -1,0 +1,174 @@
+
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/simple-frame.css" />
+* chapter-1
+**  recursive process -> iterative process  
+
+In general,the technique of defining an ivariant quantity that remains unchanged from state to state is a powerful way to think about design of iterative algorithms.
+
+`
+#+BEGIN_SRC 
+
+(define (expt b n state-var)
+	(if (= n 0)
+	1
+	(expt b (- n 1) (* b state-var))))
+
+#+END_SRC
+**  orders of growth  
+
+ We say that R(n) has orders of growth \theta(f(n)) ,written as R(n) = \theta(f(n)),
+ if there are positive constants k1 and k2 independent of n such that R(n)
+ is sandwiched  between k1*f(n) and k2*f(n)
+**  tree recurse
+
+fib series: 0 1 1 2 3 5 8 13...
+#+BEGIN_EXAMPLE
+transfomation T:
+                     |
+                  /      \               
+                left   right   
+                |                       
+               /  \                   
+             left right      
+              |                      
+            / \                     
+      left right          
+
+left + right -> left
+left         -> right
+
+#+END_EXAMPLE
+
+Observe that applying this transfomation over and over again n times ,starting with 1 and 0 ,produced  the pair Fib(n) Fib(n)
+
+The fibonacci numbers are produced by applying T n times.
+
+#+BEGIN_SRC 
+
+(define (fib n)
+  (define (iter-fib left right n)
+    (cond ((= n 0) right)
+	   (else (iter-fib (+ left right) left (- n 1)))))
+  (iter-fib 1 0 n))
+
+#+END_SRC
+
+accelerate the transfomation
+
+consider T to be the special case of p=0 and q=1 in a family of transfomations T(p,q)
+
+,where T(p,q) transfors the (left, right) according to
+
+
+#+BEGIN_SRC 
+(p + q)*left + q*right -> left
+
+q*left + p*right ->right
+#+END_SRC
+
+then for T^2 we have transfomation:
+
+#+BEGIN_SRC 
+
+
+(p^2 + 2pq +2q^2)*left + (2pq +q^2)*right -> left
+
+(2pq + q^2)*left + (p^2 + q^2)*right -> right
+
+#+END_SRC
+related code using T^2
+
+#+BEGIN_SRC 
+
+
+
+(define (fast-fib n )
+  (define (oven? x) (= (remainder x 2) 0))
+  
+  (define (iter-fib left right p q n)
+    (cond ((= n 0) right)
+	  ((oven? n)
+	   (iter-fib (+ (* (+ (* p p) (* 2 p q) (* 2 q q)) left)  (*(+ (* 2 p q) (* q q)) right))
+		     (+ (*(+ (* 2 p q) (* q q)) left) (* (+ (* p p) (* q q)) right))
+		     p
+		     q
+		     (/ n 2)))
+	   (else (iter-fib (+ left right) left p q  (- n 1)))))
+  (iter-fib 1 0 0 1 n))
+
+#+END_SRC
+
+**  great common divisors
+
+Euclid's Algorithms
+
+#+BEGIN_SRC 
+
+(define (gcd dividend divisor)
+	(if (= divisor 0)
+	dividend
+	(gcd divisor (remainder dividend divisor))))
+
+#+END_SRC
+the order of growth is theta(log n) (proved by lame's Themorem)
+
+**  testing for primality
+
+***  searching for divisor    
+ one fact: *if n is not prime, it must have a factor(not equal to 1)less than or equal to sqrt of n.* 
+ Based on this fact, the algorithms need only test divisor between 1 and sqrt of n.
+
+ #+BEGIN_SRC 
+
+ (define (smallest-divisor n)
+   (find-divisor n 2))
+
+ (define (find-divisor n test-divisor)
+   (cond ((> (square test-divisor) n ) n)
+	 ((divided? n  test-divisor) test-divisor)
+	 (else (find-divisor n (+ test-divisor 1)))))
+
+ (define (prime? n)
+	 (= (smallest-divisor n) n))
+ #+END_SRC
+
+***  the fermat test
+
++ fermat's little theorem:
+ if n is a prime number, and a is any positive integer less than n,then     
+*(remainder a^n n) = (remainder a n) = a*
+
++ caculate mod(a^n , m)
+#+BEGIN_SRC 
+(define (expmod base expt m)
+  (if (= expt 0)
+      1
+      (remainder (* base (expmod base (- expt 1) m)) m)))
+#+END_SRC
++ test
+#+BEGIN_SRC 
+
+;;; a time of random test
+;;;  random return a integer less that its input.
+;;; Hence ,to  get a number between 1 and (n-1) inclusive,
+;;; we call *random* with an input of (n-1) and add 1 to the result.
+(define (fermat-test n)
+  (define (try-it a)
+    (= (expmod a n n) a))
+  (try-it (+ 1 (random (- n 1)))))
+    
+
+
+(define (fast-prime-test num times)
+  (cond ((= times 0) true)
+	((fermat-test num)  (fast-prime-test  num (- times 1))) ;;;if it pass , times of test substact 1
+	(else false)))	
+#+END_SRC  
+
+
+
+
+
+
+ 
