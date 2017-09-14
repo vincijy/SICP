@@ -28,7 +28,7 @@
   (= (find-smallest-divisor x) x))
 
 (define (find-smallest-divisor n)
-  (test-divisor n 2)    ;;;starting-divisor
+   (test-divisor n 2)    ;;;starting-divisor
   )
 
 (define (test-divisor n sd)  ;;; sd = starting divisor
@@ -39,12 +39,60 @@
 
 ;;;====================
 ;;;check odd intergrative number in a specific range
-;; find prime smaller than n (privous)
+;; find prime smaller than n (previous)
 ;;; input should be odd
-(define (search-for-prime n)
-  (if (prime? (- n 2))
-      (- n 2)
-      (search-for-prime (- n 2))))
+;; (define (search-for-prime n)
+;;   (if (prime? (- n 2))
+;;        (- n 2)
+;;       (search-for-prime (- n 2))))
 
-(search-for-prime 101)
-   
+;; (search-for-prime 101)
+
+
+(define (search-for-prime n count)
+  (cond ((= count 0)
+	 (display "are primes"))
+	 ((prime? n)
+	  (display n)
+	  (newline)
+	  (search-for-prime (- n 1) (- count 1)))
+	 (else
+	  (search-for-prime (- n 1) count))))
+	 
+;; (search-for-prime 101 10)
+
+
+(define (search-for-all-prime n )
+  (define (search-prime n count)
+    (cond ((= count 0)
+	  (display "that is all"))
+	  ((prime? n)
+	   (display n)
+	   (newline)
+	   (search-prime (- n 1) (- count 1)))
+	  (else (search-prime (- n 1) (- count 1)))))
+  (search-prime n (- n 1)))
+;;test
+;;(search-for-all-prime 20)
+
+(define (search-for-odd-prime n)
+  (define (odd? n)
+    (= (remainder n 2) 1))
+  (define (odd-prime n count)
+    (if (odd? n)	
+	(cond ((= count 1)
+	       (display "that is all"))
+	      ((prime? n)
+	       (display n)
+	       (newline)
+	       (odd-prime (- n 2) (- count 2)))
+	      (else
+	       (odd-prime (- n 2) (- count 2))))
+	(odd-prime (- n 1) (- count 1))))
+  
+  (odd-prime n n))
+
+;; test
+;; (search-for-odd-prime 20)
+
+
