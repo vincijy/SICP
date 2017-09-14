@@ -85,6 +85,7 @@ C-x C-w  该条指令主要是将buffer内容写入到文件内，其中buffer�
 
 C-x C-c  关闭emacs  
 
+M-x dired 然后 C-x C-q 进入可编辑dired 模式 可修改文件名。然后C-x C-s 保存
 
 ##### 复制与贴贴  
 
