@@ -74,16 +74,16 @@
 ;; (search-for-prime 100000000000 4)
 
 
-;; (define (search-for-all-prime n )
-;;   (define (search-prime n count)
-;;     (cond ((= count 0)
-;; 	  (display "that is all"))
-;; 	  ((prime? n)
-;; 	   (display n)
-;; 	   (newline)
-;; 	   (search-prime (- n 1) (- count 1)))
-;; 	  (else (search-prime (- n 1) (- count 1)))))
-;;   (search-prime n (- n 1)))
+(define (search-for-all-prime n )
+  (define (search-prime n count)
+    (cond ((= count 0)
+	  (display "that is all"))
+	  ((prime? n)
+	   (display n)
+	   (newline)
+	   (search-prime (- n 1) (- count 1)))
+	  (else (search-prime (- n 1) (- count 1)))))
+  (search-prime n (- n 1)))
 ;; ;;test
 ;; ;;(search-for-all-prime 20)
 
