@@ -1,0 +1,6 @@
+(define (square x)
+  (* x x))
+(define (divide? n d)
+  (= (remainder n d) 0))
+(define (oven? n)
+  (= (remainder n 2) 0))
