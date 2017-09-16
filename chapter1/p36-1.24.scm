@@ -10,27 +10,26 @@
   (= (remainder n 2) 0))
 ;===============
 
-; runtime is a primitive in scheme,
-; return a int specified the amout of time systerm has been running
+; runtime is a primitive in scheme,return a intergal specified the amout of time systerm has been running
 
+
+;; return running time of testing if a num is prime
 (define (timed-prime-test n)
   (newline)
   (display n)
   (let ((start-time (real-time-clock)))
     (start-prime-test n start-time)))
-
-;if n is prime report elapsed-time
+  
 (define (start-prime-test n start-time)
   (if (prime? n)
       (let ((end-time (real-time-clock)))
 	(report-prime (- end-time start-time)))))
-      
+
 
 (define (report-prime elapsed-time)
   (display "is prime, used time: ")
-  (display elapsed-time)
-  (display "   multiply sqrt of 10 should be:")
-  (display (* elapsed-time 3.16)))
+  (display elapsed-time))
+ 
 
 ;; ;==============
 ;; (define (prime? x)
@@ -43,10 +42,12 @@
 ;;   (cond ((> (square sd) n) n)
 ;; 	 ((divide? n sd)  sd)
 ;; 	 (else (test-divisor n (+ sd 1)))))
-;;;use fermat-test to find divisor
-;;if n is prime,choose a num a less than a
-;;then (reamainder a^n n)=(remaider a n)=a
 
+;;=======================
+;;;use fermat-test to find divisor
+;;if n is prime,choose a num a less than n
+;;then (reamainder a^n n)=(remaider a n)=a
+ 
 (define (prime? n)
   (define (test n times)
     (cond ((= times 0) true)
@@ -67,17 +68,6 @@
 	
     
       
-;;;====================
-;;;check odd intergrative number in a specific range
-;; find prime smaller than n (previous)
-;;; input should be odd
-;; (define (search-for-prime n)
-;;   (if (prime? (- n 2))
-;;        (- n 2)
-;;       (search-for-prime (- n 2))))
-
-;; (search-for-prime 101)
-
 ;;==========================
 (define (search-for-prime n count)
   (cond((= count 0)
@@ -90,22 +80,19 @@
 	   (else
 	    (search-for-prime (- n 1) count))))))
 	 
-	
-
-
-
-
-
-;;
+;; testing-examples				  
 ;; (search-for-prime 100000 3)
 ;; (search-for-prime 1000000 3)
 ;; (search-for-prime 10000000 3)
 ;; (search-for-prime 100000000 3)
 ;; (search-for-prime 1000000000 3)
-;; (search-for-prime 10000000000 4)
-;; (search-for-prime 100000000000 4)
+(search-for-prime 10000000000 4)
+(search-for-prime 100000000000 4)
+(search-for-prime 1000000000000 4)
+(search-for-prime 10000000000000 4)
+(search-for-prime 100000000000000 4)
 
-
+;;=========================
 (define (search-for-all-prime n )
   (define (search-prime n count)
     (cond ((= count 0)
