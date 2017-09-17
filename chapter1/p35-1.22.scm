@@ -67,11 +67,13 @@
 	
 
 ;;
-(search-for-prime 10000000 3)
-(search-for-prime 100000000 3)
+;; (search-for-prime 100000 3)
+;; (search-for-prime 1000000 3)
+;; (search-for-prime 10000000 3)
+;; (search-for-prime 100000000 3)
 (search-for-prime 1000000000 3)
-;; (search-for-prime 10000000000 4)
-;; (search-for-prime 100000000000 4)
+(search-for-prime 10000000000 4)
+(search-for-prime 100000000000 4)
 
 
 (define (search-for-all-prime n )
