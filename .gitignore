@@ -3,13 +3,8 @@
 
 *.org~
 
+
+
 *.scm##
 
-*.scm#
-
-*.scm###
-
-*.scm####
-
-*.html~
-
+*.css
