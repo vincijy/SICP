@@ -30,3 +30,16 @@
 
 (sum-integers 1 10)
   
+(define (sum-cube a b)
+  (define (inc x)
+    (+ x 1))
+  (sum-term a b inc cube))
+
+(define (pi-sum a b)
+  (define (term a)
+    (/ 1.0  (* a (+ a 2))))
+  (define (next a)
+    (+ a 4))
+  (sum-term a b next term))
+
+(* (pi-sum 1 1000) 8)
