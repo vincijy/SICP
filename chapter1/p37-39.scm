@@ -35,6 +35,7 @@
     (+ x 1))
   (sum-term a b inc cube))
 
+;; 1.0 is quite defferent from 1
 (define (pi-sum a b)
   (define (term a)
     (/ 1.0  (* a (+ a 2))))
@@ -43,3 +44,16 @@
   (sum-term a b next term))
 
 (* (pi-sum 1 1000) 8)
+
+
+(define (integral a b term dx)
+  (define (next x)
+    (+ x dx))
+  (define (func x)
+    (term ( + x  (/ dx 2))))
+  (* (sum-term a b next func)  dx))
+
+(integral 0 1 cube 0.01)
+   
+    
+   
