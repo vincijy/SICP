@@ -23,3 +23,4 @@
     (* (factor m) (func x)))
 
   (* (/ h 3) (sum-term a b next term)))
+c
