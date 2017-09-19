@@ -5,6 +5,9 @@
 (define (oven? n)
   (= (remainder n 2) 0))
 
+(define (cube x)
+  (* x (square x)))
+
 ;; (define (time-process process)
 ;;   (let ((start (real-time-clock)))
 ;;     (process)
