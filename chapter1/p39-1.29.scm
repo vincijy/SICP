@@ -13,7 +13,7 @@
     (/ (- b a) n))
   (define (next x)
     (+ x h))
-  (define (term x )
+   (define (term x )
     (define sequence
       (/ (- x a) h))
     (define (factor sequence)
@@ -22,5 +22,6 @@
 	    (else 4)))
     (* (factor sequence) (func x)))
  
-  (* (/ h 3) (sum-term a b next term)))
+  (* (/ h 3) (sum-iterm a b next term)))
 
+(integral-simp 0 1 cube 100)
