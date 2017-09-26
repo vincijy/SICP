@@ -16,10 +16,19 @@
 (define (sum-oven a b)
   (filter-accumulate + 0 a b identity inc oven?))
 
-(define (sum-squ-prime a b)
+(define (sum-square-prime a b)
   (filter-accumulate + 0 a b square inc prime?))
 
-(sum-squ-prime 1 5)
+(define (product-pos-rel-prime n)
+  (define (relative-prime? a)
+    (= (gcd n a) 1))
+  (filter-accumulate * 1 1 n identity inc relative-prime?))
+
+;; test
+(= (product-pos-rel-prime 7) (* 2 3 4 5 6))
+
+               
+
 
 
 	
