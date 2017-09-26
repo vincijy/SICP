@@ -1,9 +1,18 @@
 
-(define (accumulate combiner null-value a b term next)
-  (if (>  a b)
-      null-value
-      (combiner (term a) (accumulate combiner null-value (next a) b term next))))
+;; recursive
+;; (define (accumulate combiner null-value a b term next)
+;;   (if (>  a b)
+;;       null-value
+;;       (combiner (term a) (accumulate combiner null-value (next a) b term next))))
 
+
+;; iterative
+(define (accumulate combiner null-value a b term next)
+  (define (iter-helper result)
+    (if (> a b)
+	result
+	(iter-helper (combiner (term (next a)) result))))
+  (iter-helper a))
 
 
 (define (sum a b next term)
@@ -27,7 +36,11 @@
     a)
   (product a b next identity))
 
-(product-identity 1 3)
+
+
+(sum-identity 1 3)
+
+
 
 
 
