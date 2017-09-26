@@ -33,6 +33,13 @@
   (if (= y 0)
       x
       (gcd y (remainder x y))))
+
+(define (positive? x)
+  (> x 0))
+(define (negative? x)
+  (< x 0))
+(define (average x y)
+  (/ (+ x y) 2))
    
 
 
