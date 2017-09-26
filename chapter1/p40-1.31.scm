@@ -5,7 +5,7 @@
       1
       (* (term a) (product (next a) b next term))))
 
-
+;;calculate product of arithmetic sequence
 (define (sequence-product a m)
   (define (next a)
     (+ a 2))
@@ -21,6 +21,8 @@
   (square (sequence-product a (/ n 2))))
 
 ;;to deal with 2 4 4 6 6 8 ..
+;; suppose a sequence 2 4 4 6 6 8 8 10, we first calculate the product of 2 2 4 4 6 6 8 8 10 10, then dedive the result by 2 ;;;and 10
+
 (define (numerator a n)
   (define last-term
     (if (oven? n)
