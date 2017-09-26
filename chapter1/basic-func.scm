@@ -24,7 +24,15 @@
     (cond ((> (square n) x) x)
 	  ((divided? x n) n)
 	  (else (divisor-test x (+ n 1)))))
-  (= x (find-divisor x)))
+  (if (= x 1)
+      false
+      (= x (find-divisor x))))
+
+
+(define (gcd x y)
+  (if (= y 0)
+      x
+      (gcd y (remainder x y))))
    
 
 
