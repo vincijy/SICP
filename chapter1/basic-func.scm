@@ -8,20 +8,26 @@
 (define (cube x)
   (* x (square x)))
 
-;; (define (time-process process)
-;;   (let ((start (real-time-clock)))
-;;     (process)
-;;     (- (real-time-clock) start)))
- 
+(define (inc x)
+  (+ x 1))
 
-;; (define (test n)
-;;   (cond ((= n 0) 0)
-;; 	(else
-;; 	 (newline)
-;; 	 (display (- n 1)
-;; 	 (test (- n 1)))))
- 
-;; (time-process (test 10000))
+(define (identity x)
+  x)
+
+
+(define (prime? x)
+
+  (define (find-divisor x)
+    (divisor-test x 2))
+
+  (define (divisor-test x n)
+    (cond ((> (square n) x) x)
+	  ((divided? x n) n)
+	  (else (divisor-test x (+ n 1)))))
+  (= x (find-divisor x)))
+   
+
+
 
 	 
     
