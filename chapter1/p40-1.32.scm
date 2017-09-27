@@ -7,6 +7,7 @@
 
 
 ;; iterative
+;; iter-help use two vars to record the changes
 (define (accumulate combiner null-value a b term next)
   (define (iter-helper a result)
     (if (> a b)

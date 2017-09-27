@@ -40,9 +40,3 @@
   (< x 0))
 (define (average x y)
   (/ (+ x y) 2))
-   
-
-
-
-	 
-    
