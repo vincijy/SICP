@@ -40,3 +40,21 @@
   (< x 0))
 (define (average x y)
   (/ (+ x y) 2))
+
+
+(define (quotient x y)
+  (/ (- x (remainder x y)) y))
+
+
+(define (for-print-func f n)
+  (cond ((= n 1)
+	 (display n)
+	 (display " : ")
+	 (display (f n)))
+	(else
+	 (display n)
+	 (display " : ")
+	 (display (f n))
+	 (newline)
+	 (for-print-func f (- n 1)))))
+	

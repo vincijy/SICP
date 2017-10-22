@@ -7,7 +7,7 @@
 In general,the technique of defining an ivariant quantity that remains unchanged from state to state is a powerful way to think about design of iterative algorithms.
 
 `
-#+BEGIN_SRC 
+#+BEGIN_SRC scheme
 
 (define (expt b n state-var)
 	(if (= n 0)
@@ -168,7 +168,22 @@ the order of growth is theta(log n) (proved by lame's Themorem)
 
 
 
+*** fixed point
+#+BEGIN_SRC scheme
+(define (fixed-point f first-guess)
+  (define (try guess)
+    (let ((next (f guess)))
+      (if (close-enough? guess next)
+	  next
+	  (try next))))
+  (try first-guess))
+#+END_SRC
+**** average-dumping
+x = y^2
 
+y = x/y
 
-
- 
+#+BEGIN_SRC scheme 
+(define (sqrt x)
+  (fixed-point (lambda (y) (average y (/ x y)))) 1.0)
+#+END_SRC
