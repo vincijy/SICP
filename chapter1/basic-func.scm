@@ -1,3 +1,5 @@
+(define inc (lambda (x) (+ x 1)))
+
 (define (square x)
   (* x x))
 (define (divided? n d)
