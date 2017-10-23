@@ -187,3 +187,16 @@ y = x/y
 (define (sqrt x)
   (fixed-point (lambda (y) (average y (/ x y)))) 1.0)
 #+END_SRC
+
+
+**** continual function
+#+BEGIN_SRC scheme
+
+(define (cont-frac N D k)
+  (define (helper i)
+    (if (= k i)
+	(/ (N i) (D i))
+	(/ (N i) (+ (D i) (helper (+ i 1))))))
+  (helper 1))
+
+#+END_SRC
