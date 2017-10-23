@@ -71,3 +71,7 @@
 	  next
 	  (try next))))
   (try first-guess))
+
+(define (derive g)
+  (define dx 0.0001)
+  (lambda (x) (/ (- (g (+ x dx) ) (g x)) dx)))
