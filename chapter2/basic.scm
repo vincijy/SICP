@@ -98,5 +98,8 @@
   (fixed-point (average-damp (lambda (y) (/ x y)))  0.001))
     
   
-  
 
+(define (map proc items)
+  (cond ((null? items) items)
+	(else (cons (proc (car items)) (map proc (cdr items))))))
+	 
