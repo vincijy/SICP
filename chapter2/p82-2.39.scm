@@ -24,11 +24,11 @@
 
 
 (define (reverse-l seqs)
-  (fold-left (lambda(item rest)
-	       (append (list item) rest))
+  (fold-left (lambda(x y)
+	       (cons  y  x))
 	     nil seqs))
 
-(reverse (list 1 2 3 4 5 6))
+(reverse-l (list 1 2 3 4 5 6))
 	     
 	       
 	       
