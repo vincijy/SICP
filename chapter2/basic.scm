@@ -105,3 +105,14 @@
   (cond ((null? items) items)
 	(else (cons (proc (car items)) (map proc (cdr items))))))
 	 
+(define (accumulate operation initial sequence)
+  (cond ((null? sequence) initial)
+	(else (operation (car sequence)
+			 (accumulate operation initial (cdr sequence))))))
+(define (filter predicate sequence)
+  (cond ((null? sequence) '())
+	((predicate (car sequence)) (cons (car sequence) (filter predicate (cdr sequence))))
+	(else (filter predicate (cdr sequence)))))
+		
+	 
+(define nil '())
