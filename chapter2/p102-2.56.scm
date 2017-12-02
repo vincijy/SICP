@@ -29,23 +29,30 @@
 
 (define (same-varibale? x y)
   (and (variable? x) (variable? y) (eq? x y)))
-(define (make-sum a1 a2)
-  (list '+ a1 a2))
+
+;; (define (make-sum a1 a2)
+;;   (list '+ a1 a2))
+(define (make-sum a1 a2) ;;a2 should be a list
+  (list a1 a2))
 
 (define (make-product x y)
   (list '* x y))
 
 (define (addend s)
-  (cadr s))
+  (cond ((not (pair? (cadr s))) (cadr s))
+	(else (cons (car s)  (cadr s)))))
 
 (define (augend s)
-  (caddr s))
+  (cond ((null? (cdddr s)) (car (cddr s)))
+	(else (cons (car s) (cddr s)))))
 
 (define (multiplier s)
-  (cadr s))
+  (cond ((not (pair? (cadr s))) (cadr s))
+	(else (cons (car s)  (cadr s)))))
 
 (define (multiplicand s)
-  (caddr s))
+  (cond ((null? (cdddr s)) (car (cddr s)))
+	(else (cons (car s) (cddr s)))))
 
 (define (sum? s)
   (and (pair? s) (eq? (car s) '+)))
@@ -64,7 +71,7 @@
        ((=number? x 1) y)
        ((=number? y 1) x)
        ((and (number? x) (number? y)) (* x y))
-       (else (list '* x y))))
+        (else (list '* x y))))
 
 (define (=number? exp num)
   (and (number? exp) (= exp num)))
