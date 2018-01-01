@@ -11,21 +11,10 @@ MIT Scheme
 
 [MIT Scheme 的基本使用](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
 
-##MIT Scheme 的一点使用技巧
-### 
-用编辑器编写函数，然后在在命令行下通过load函数加载进解释器。
 
-你可以通过编辑配置文件scheme.ini来自定义MIT-Scheme。     scheme.ini文件的创建路径是由环境变量HOMEPATH决定的。你可以通过在命令提示符（DOS Windows）中输入>set HOMEPATH来取得HOMEPATH的值。在WinXP中，HOMEPATH被预定义为：\Document and Setting\username    
-下面的代码给出了一个scheme.ini文件的例子：    
 
-    (cd "C:\\doc\\scheme")
-    (define call/cc call-with-current-continuation)
-第一行代码代表将工作目录切换到C:\doc\scheme。通过这条代码，MIT-Scheme移动工作路径切换到这个路径，你不需要再敲击程序的绝对路径来载入Scheme程序。第二行是定义call-with-current-continuation的缩略词
+## window 下 MIT Scheme的一点配置与使用技巧
 
-###
-<blockquote>
-<p> window 下 MIT Scheme的一点配置与使用技巧 </p>
-</blockquote>
 
 <div id="outline-container-orgaca1ef6" class="outline-2">
 <h2 id="orgaca1ef6">1 初始位置设置</h2>
