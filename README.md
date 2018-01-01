@@ -12,8 +12,7 @@ MIT Scheme
 [MIT Scheme 的基本使用](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
 
 
-
-## window 下 MIT Scheme的一点配置与使用技巧
+<h1>window 下 MIT Scheme的一点配置与使用技巧</h1>
 
 
 <div id="outline-container-orgaca1ef6" class="outline-2">
