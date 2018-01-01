@@ -1,4 +1,6 @@
 
+
+window 系统下我用EMACS编辑程序，然后使用MIT Scheme编译。
 ## 环境配置  
 
 MIT Scheme
@@ -9,6 +11,8 @@ MIT Scheme
 
 [MIT Scheme 的基本使用](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
 
+##MIT Scheme 的一点使用技巧
+### 
 用编辑器编写函数，然后在在命令行下通过load函数加载进解释器。
 
 你可以通过编辑配置文件scheme.ini来自定义MIT-Scheme。     scheme.ini文件的创建路径是由环境变量HOMEPATH决定的。你可以通过在命令提示符（DOS Windows）中输入>set HOMEPATH来取得HOMEPATH的值。在WinXP中，HOMEPATH被预定义为：\Document and Setting\username    
@@ -18,111 +22,54 @@ MIT Scheme
     (define call/cc call-with-current-continuation)
 第一行代码代表将工作目录切换到C:\doc\scheme。通过这条代码，MIT-Scheme移动工作路径切换到这个路径，你不需要再敲击程序的绝对路径来载入Scheme程序。第二行是定义call-with-current-continuation的缩略词
 
+###
+<blockquote>
+<p> window 下 MIT Scheme的一点配置与使用技巧 </p>
+</blockquote>
 
+<div id="outline-container-orgaca1ef6" class="outline-2">
+<h2 id="orgaca1ef6">1 初始位置设置</h2>
+<div class="outline-text-2" id="text-orgaca1ef6">
+<p> 我们一般通过函数load加载文件并且通过C-x C-e求值 加载文件需要知道文件的路径，路径太长不免麻烦，通过设置初始位置使得路径变短方便输入 </p>
+</div>
 
-## 记录点Emac 基本用法
+<div id="outline-container-org688bd2f" class="outline-3">
+<h3 id="org688bd2f">1.1 设置命令行的的初始位置</h3>
+<div class="outline-text-3" id="text-org688bd2f">
+<p> 你可以通过编辑配置文件scheme.ini来自定义MIT-Scheme Window平台的程序配置文件一般会在变量HOMEPATH下 通过快捷键win + R 输入cmd调出DOS，输入set homepath即可知道homepath的路径 将scheme.ini文件放在homepath下（没有则建立）。 </p>
 
-#### 使用git
+<p> 一下举个例子： </p>
 
-在.emacs中添加Gitbash的路径
+<p> 如果你的scheme文件都放在C：\doc </p>
 
-```
-(setq explicit-shell-file-name
-      "C:/Program Files (x86)/Git/bin/bash.exe")
-(setq shell-file-name explicit-shell-file-name)
-(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin")
-```
+<ul class="org-ul">
+<li>在该文件下新建了个test.scm</li>
 
-然后按M-x shell
+<li>编辑scheme.ini</li>
+</ul>
+<pre>
+(cd "C:\\doc")
+(define call/cc call-with-current-continuation)
+</pre>
+<ul class="org-ul">
+<li>保存后重启动mit-scheme，C-x z进入命令行模式</li>
+<li>现在只要输入(load "test.scm") 并且按C-x C-e即可运行文件。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6e13a7b" class="outline-3">
+<h3 id="org6e13a7b">1.2 设置Edwin模式的初始位置</h3>
+<div class="outline-text-3" id="text-org6e13a7b">
+<p> 在桌面的快捷方式的属性设置里面编辑起始文件路径即可。 比如上面的例子编辑起始位置为"C:\doc"  现在在Edwin模式下只要输入(load "test.scm") 并且按C-x C-e即可运行文件。 </p>
+</div>
+</div>
+</div>
 
+<div id="outline-container-org7a02e37" class="outline-2">
+<h2 id="org7a02e37">2 历史命令</h2>
+<div class="outline-text-2" id="text-org7a02e37">
+<p> 我么知道Dos 下或者终端中历史使用命令只要按个方向键上即可。 scheme-命令行模式下不知道如何使用命令行，但是edwin模式下和Emas类似通过 M-p(ALT + P)即可使用历史命令 </p>
+</div>
+</div>
 
-
-#### 常用快捷键
-
-
-##### 窗口管理
-
-C＋x＋1 只显示一个窗口    
-
-C＋x＋2 上下分屏   
-
-C＋x＋3 左右分屏（经测试得到的结果）    
-
-C＋x＋o 切换到另一个窗口   
-
-C＋M＋v 在不切换到另一个窗口的情况下，向下移动其光标 （快捷方法）    
-
-C＋x＋4＋C＋f 在新窗口打开文件（快捷方法）    
-
-M-x make-frame 打开完整的新窗口，带工具栏的。    
-
-M-x delete-frame 关闭    
-
-
-M+X + long_command 如 M+x+text-mode 切换编辑模式。其它命令以后用到再学。    
-
-M+x + slime 进入slime模式    
-
-
-##### 文件操作  
-
-C-x d 列出当前文件夹下的文件，可通过移动光标到需要打开的文件，然后按enter打开
-
-C-x C-f    按提示输入文件名，如果文件不存在则新建文件，如果文件存在则打开文件（tab键可以自动补全）
-
-C-x C-s    保存  
-
-C-x C-w    按提示输入文件名，另存为  
-
-M-x customize-variable 回车 make-backup-files 回车     关掉文件备份  
-
-
-C-x C-v   这条指令也是用在打开文件，当你使用C-x C-f打开文件时，如果打开文件不是你所想要的，可以使用指令C-x   C-v打开另一个文件以替换当前打开的文件。  
-
-C-x i  这条指令主要用于在光标所在处插入文件，比如把另一个文件内容插入到当前文件。    
-
-C-x C-w  该条指令主要是将buffer内容写入到文件内，其中buffer就是你在emacs窗口所写的内容。  
-
-C-x C-c  关闭emacs  
-
-M-x dired 然后 C-x C-q 进入可编辑dired 模式 可修改文件名。然后C-x C-s 保存
-
-##### 复制与贴贴  
-
-选中某一块区域：CTRL+@（CTRL+SHIFT+2）或者CTRL+SPACE    
-
-删除快捷键： CTRL+d相当于键盘上的DELETE键 
-
-删除前面的字符：BACKSPACE  
-
-复制快捷键：ALT+w，将当前选中的文本复制到缓冲区。  
-
-粘贴快捷键：CTRL+y  
-
-保存快捷键：CTRL+x 然后按 CTRL+s  
-
-标记的快捷键：ctrl+空格和ctrl+@。按完之后就进入了标记状态，然后以任意方式移动光标，标记起始位和光标之间的内容都会被选中，然后根据情况你就能复制或者剪切。如果要多行，那么先ctrl-a到开头，然后ctrl+shift+2标记，ctrl+n移动数行，ctrl+e到行尾。然后该剪切剪切（ctrl+w），该复制复制（alt+w）。  
-
-##### 撤销操作      
-
-撤销操作 : CTRL + /  
-
-
-##### 注释    
-
-###### 多行注释：  
-
-1. 选中一段区域到最后一行行首；  
-
-2. 按 C-x r t ；  
-
-3. 输入注释内容；  
-
-###### 反多行注释：  
-
-1. 选中一段区域到最后一行，紧挨着注释字符之后的位置；  
-
-2. 按 c-x r k；  
-
-好在有一个 Alt-; 的快捷键，默认绑定了 comment-dwim，能注释/反注释当前激活的区域。如果没有激活区域，就在当前行末加注释  
 
