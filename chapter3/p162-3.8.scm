@@ -1,15 +1,20 @@
 
 
+;;ans:
+(define (func inner)
+  (lambda (x) (begin (set! inner (* inner x)) inner)))
 
-(define (func arg)
-  (lambda(x) (set! arg (- arg x))
-	 arg))
+(define f
+  (func 1))
 
-(define f (func 1))
+;;test
 
-(+ (f 0) (f 1))
-
+(+ (f 0) (f  1))
 ;; (+ (f 1) (f 0))
+
+
+
+
 
 
 	   
